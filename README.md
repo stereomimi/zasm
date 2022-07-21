@@ -3,7 +3,8 @@
 
 WARNING!!
 This fork's only change is the fact that reusable labels must now start with a letter instead than a digit.<br/>
-It'll likely become out of date eventually.
+It'll likely become out of date eventually.<br/>
+Also, you'll have to recompile this on your own for the projects that need this, since the compiled executables are the unforked ones.
 
 #### Features
 
