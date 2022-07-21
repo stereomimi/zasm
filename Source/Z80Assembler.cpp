@@ -1238,13 +1238,18 @@ bin_number:	while (is_bin_digit(*w)) { n.value += n.value + (*w&1); w++; }
 			if (c=='b') goto bin_number;	// binary number  indicated by suffix
 		}
 	}
+	if (is_letter(w[0]) && q.test_char('$')) // new reusable label 
+	{
+		w = catstr(reusable_label_basename,"$",w);
+		goto label;
+	}
 
 	if (is_dec_digit(w[0]))			// decimal number or reusable label
 	{
-		if (q.test_char('$'))		// reusable label (SDASZ80)
+		if (q.test_char('$'))		// used to be compatible reusable label (SDASZ80)
 		{
-			w = catstr(reusable_label_basename,"$",w);
-			goto label;
+			//w = catstr(reusable_label_basename,"$",w);
+			//goto label;
 		}
 		else						// decimal number
 		{
@@ -1679,7 +1684,8 @@ void Z80Assembler::asmLabel (SourceLine& q) throws
 	cstr name = q.nextWord();
 	if (name[0]==0) return;			// end of line
 
-	bool is_reusable = is_dec_digit(name[0]) && q.test_char('$');	// SDASZ80
+	//bool is_reusable = is_dec_digit(name[0]) && q.test_char('$');	// SDASZ80
+	bool is_reusable = is_letter(name[0]) && q.test_char('$'); // compatibility isn't needed in my case.
 
 	if (!is_reusable && !is_name(name))					// must be a pseudo instruction or broken code
 	{													// or a label name with '.' and no --dotnames
