@@ -1,6 +1,10 @@
 
 ## zasm - Z80, 8080 and Z180 assembler
 
+WARNING!!
+This fork's only change is the fact that reusable labels must now start with a letter instead than a digit.<br/>
+It'll likely become out of date eventually.
+
 #### Features
 
 _zasm_ accepts source code using **8080** and **Z80 syntax** and can **convert 8080 syntax to Z80**.  
