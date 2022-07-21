@@ -58,7 +58,8 @@ static const char version[] =
 "  zasm - 8080/z80/z180 assembler (c) 1994 - 2022 Günter Woigk.\n"
 "  version " VERSION ", %s, for " _PLATFORM ".\n"						// version, date, platform
 "  homepage: https://k1.spdns.de/zasm/\n"
-"  git repo: https://github.com/Megatokio/zasm\n\n";
+"  git repo: https://github.com/stereomimi/zasm\n\n"
+"  WARNING: THIS IS A FORK. CHECK THE REPO TO SEE THE CHANGES.";
 
 static const char syntax[] =
 "syntax:\n"
